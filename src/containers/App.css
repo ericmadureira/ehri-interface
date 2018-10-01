@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.App-title {
+  font-size: 3em;
+}
+
+.App-header {
+  background-color: #4B413D;
+  padding: 20px;
+  color: white;
+}
+
+
+.App-intro {
+  font-size: large;
+}
