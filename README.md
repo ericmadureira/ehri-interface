@@ -1,4 +1,4 @@
-Test interface for EHRI's GraphQL API. 
+Interface for EHRI's GraphQL API. 
 
 You can test it and access the data as long as you know the rules, so keep and eye on 
 https://portal.ehri-project.eu/api/graphql 
