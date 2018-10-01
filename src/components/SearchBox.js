@@ -9,7 +9,7 @@ const SearchBox = ({ searchfield }) => {
         style={divStyle}
         id='searchBox'
         type='search'
-        value='query { Country(id: "it") { name situation } }'
+        defaultValue=''
       />
     </div>
   );

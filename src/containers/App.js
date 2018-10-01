@@ -8,22 +8,22 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      searchfield: '{ Country(id: "it") { name situation } }',
+      searchfield: '',
       resultfield: ''
     }
   }
 
   fetchData = () => {
-    window.fetch('https://portal.ehri-project.eu/api/graphql', {
+    fetch('https://portal.ehri-project.eu/api/graphql', {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        query: '{ Country (id: "us") { name situation } }'
+        query: '{ Country(id: "us") { name situation } }'
       })
     })
-    .then(response => JSON.stringify(response.json()))
-    .then(result => this.setState({ resultfield: result }));
-    
+    .then(response => response.json())
+    .then(result => console.log(result));
+    // .then(result => this.setState({ resultfield: result }));
   }
 
   render() {
@@ -34,17 +34,12 @@ class App extends Component {
           <h2>Retrieve data from the EHRI GraphQL API</h2>
         </header>
         <p className="App-intro">
-          Enter a valid GraphQL Query based on EHRI documentation.
+          Enter a valid GraphQL Query based on EHRI documentation<br/><br/>
+          <a href="https://portal.ehri-project.eu/api/graphql">https://portal.ehri-project.eu/api/graphql</a><br/>
+          <a href="https://portal.ehri-project.eu/api/v1">https://portal.ehri-project.eu/api/v1</a>
         </p>
-        <p>
-          More at <br/>
-          <u>
-            https://portal.ehri-project.eu/api/graphql<br/>
-            https://portal.ehri-project.eu/api/v1
-          </u>
-        </p>
-        <SearchBox />        
-        <SearchButton fetchData={this.fetchData}/>        
+        <SearchBox />
+        <SearchButton fetchData={this.fetchData}/>
         <ResultBox />
       </div>
     );

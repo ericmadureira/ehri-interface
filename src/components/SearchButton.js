@@ -1,11 +1,10 @@
 import React from 'react';
 
-const SearchButton = ({ searchfield, fetchData }) => {
+const SearchButton = ({ fetchData }) => {
   return (
     <div className='pa2'>
       <button
-        className='pa3 ba b--gray'        
-        value='Buscar'
+        className='pa3 ba b--gray'
         onClick={fetchData}
       >Search</button>
     </div>
