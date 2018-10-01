@@ -5,6 +5,10 @@ https://portal.ehri-project.eu/api/graphql
 https://portal.ehri-project.eu/api/v1  
 
 Work in progress.  
+Next features:
+* Basically make it work  
+* Filters  
+* Improve UI  
 
 Author: Eric Madureira  
 'Made to improve my coding skills with React and GraphQL.' 
