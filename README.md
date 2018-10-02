@@ -6,9 +6,10 @@ https://portal.ehri-project.eu/api/v1
 
 Work in progress.  
 Next features:
-* Basically make it work  
-* Filters  
+* ~~Basically make it work~~  
+* Improve results  
 * Improve UI  
+* Adapt to TypeScript
 
 Author: Eric Madureira  
-'Made to improve my coding skills with React and GraphQL.' 
+"Made to improve my coding skills with React and GraphQL." 
