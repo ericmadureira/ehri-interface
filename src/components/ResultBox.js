@@ -2,9 +2,13 @@ import React from 'react';
 
 const ResultBox = ({ result }) => {
   return (
-    <div id='resultBox' className='pa3 ba' style={{ width: '70%', height: '200px' }}>
-      {result}
-    </div>
+    <textarea
+      id='resultBox'
+      className='pa3 ba'
+      style={{ width: '70%', height: '200px' }}
+      value={result}
+      readOnly>
+    </textarea>
   );
 }
 
