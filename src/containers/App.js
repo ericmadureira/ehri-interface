@@ -22,11 +22,16 @@ class App extends Component {
       })
     })
     .then(response => response.json())
-    .then(result => console.log(result));
-    // .then(result => this.setState({ resultfield: result }));
+    // .then(result => console.log(result));
+    .then(result => this.setState({ resultfield: JSON.stringify(result.data.Country) }));
+  }
+
+  parseData = (jsonObj) => {
+
   }
 
   render() {
+    const { resultfield } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -40,7 +45,7 @@ class App extends Component {
         </p>
         <SearchBox />
         <SearchButton fetchData={this.fetchData}/>
-        <ResultBox />
+        <ResultBox result={resultfield} />
       </div>
     );
   }

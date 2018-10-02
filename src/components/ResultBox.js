@@ -1,14 +1,9 @@
 import React from 'react';
 
-const ResultBox = ({ resultfield }) => {
-  let divStyle = { width: '70%', height: '200px' };
+const ResultBox = ({ result }) => {
   return (
-    <div className='pa1'>
-      <input
-        className='pa3 ba'
-        style={divStyle}
-        id='resultBox'
-      />
+    <div id='resultBox' className='pa3 ba' style={{ width: '70%', height: '200px' }}>
+      {result}
     </div>
   );
 }
