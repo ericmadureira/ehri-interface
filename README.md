@@ -6,8 +6,8 @@ https://portal.ehri-project.eu/api/v1
 
 To run this project:  
 1. cd into the project folder  
-2. run ´npm install´  
-3. run ´npm start´  
+2. run `npm install`  
+3. run `npm start`  
 
 Work in progress.  
 Next features:
