@@ -4,6 +4,11 @@ You can test it and access the data as long as you know the rules, so keep an ey
 https://portal.ehri-project.eu/api/graphql  
 https://portal.ehri-project.eu/api/v1  
 
+To run this project:  
+1. cd into the project folder  
+2. run ´npm install´  
+3. run ´npm start´  
+
 Work in progress.  
 Next features:
 * ~~Basically make it work~~ Done :D  
