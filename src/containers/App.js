@@ -8,9 +8,13 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      searchfield: '',
+      searchfield: '{ Country(id: "it") { name situation } }',
       resultfield: ''
     }
+  }
+
+  onSearchChange = (e) => {
+    this.setState({ searchfield: e.target.value})
   }
 
   fetchData = () => {
@@ -18,20 +22,16 @@ class App extends Component {
       method: 'post',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        query: '{ Country(id: "us") { name situation } }'
+        query: this.state.searchfield
       })
     })
     .then(response => response.json())
     // .then(result => console.log(result));
-    .then(result => this.setState({ resultfield: JSON.stringify(result.data.Country) }));
-  }
-
-  parseData = (jsonObj) => {
-
+    .then(result => this.setState({ resultfield: JSON.stringify(result.data) }));
   }
 
   render() {
-    const { resultfield } = this.state;
+    const { resultfield, searchfield } = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -43,8 +43,8 @@ class App extends Component {
           <a href="https://portal.ehri-project.eu/api/graphql">https://portal.ehri-project.eu/api/graphql</a><br/>
           <a href="https://portal.ehri-project.eu/api/v1">https://portal.ehri-project.eu/api/v1</a>
         </p>
-        <SearchBox />
-        <SearchButton fetchData={this.fetchData}/>
+        <SearchBox search={searchfield} onchange={this.onSearchChange} />
+        <SearchButton fetchData={this.fetchData} />
         <ResultBox result={resultfield} />
       </div>
     );
