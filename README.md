@@ -6,8 +6,8 @@ https://portal.ehri-project.eu/api/v1
 
 Work in progress.  
 Next features:
-* ~~Basically make it work~~  
-* Improve results  
+* ~~Basically make it work~~ Done :D  
+* Parse any result  
 * Improve UI  
 * Adapt to TypeScript
 
