@@ -13,10 +13,12 @@ class App extends Component {
     }
   }
 
+  // Updates searchfield state based on user input
   onSearchChange = (e) => {
     this.setState({ searchfield: e.target.value})
   }
 
+  // Request data from the API
   fetchData = () => {
     fetch('https://portal.ehri-project.eu/api/graphql', {
       method: 'post',
@@ -26,7 +28,6 @@ class App extends Component {
       })
     })
     .then(response => response.json())
-    // .then(result => console.log(result));
     .then(result => this.setState({ resultfield: JSON.stringify(result.data) }));
   }
 
@@ -40,8 +41,8 @@ class App extends Component {
         </header>
         <p className="App-intro">
           Enter a valid GraphQL Query based on EHRI documentation<br/><br/>
-          <a href="https://portal.ehri-project.eu/api/graphql">https://portal.ehri-project.eu/api/graphql</a><br/>
-          <a href="https://portal.ehri-project.eu/api/v1">https://portal.ehri-project.eu/api/v1</a>
+          <a href="https://portal.ehri-project.eu/api/graphql" target="_blank">https://portal.ehri-project.eu/api/graphql</a><br/>
+          <a href="https://portal.ehri-project.eu/api/v1" target="_blank">https://portal.ehri-project.eu/api/v1</a>
         </p>
         <SearchBox search={searchfield} onchange={this.onSearchChange} />
         <SearchButton fetchData={this.fetchData} />
